@@ -1,4 +1,4 @@
-# JavaScript 30 : Day 1
+# JavaScript 30 : Day 1 Drum kit
 
 1. 當鍵盤按下時會觸發事件發出聲音，同時相對應的按鍵新增 style。
 1. 如果重複性按下相同的按鍵時，聲音會立刻重複播放。
@@ -7,7 +7,7 @@
 重點：
 <table>
   <tr>
-    <th><cdde>audio.currentTime = 0</cdde></th>
+    <th><code>audio.currentTime = 0</code></th>
     <td>聲音會重頭開始播放</td>
   </tr>
   <tr>
@@ -23,3 +23,5 @@
     <td>當 transitioin 效果結束後執行 function</td>
   </tr>
 </table>
+
+[DEMO](./index-EXERCISE.html)
