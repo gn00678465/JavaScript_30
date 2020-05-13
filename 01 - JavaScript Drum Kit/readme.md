@@ -24,4 +24,4 @@
   </tr>
 </table>
 
-[DEMO](./index-EXERCISE.html)
+<a href="https://gn00678465.github.io/JavaScript_30_exercise/01%20-%20JavaScript%20Drum%20Kit/index-EXERCISE.html" traget="_brank"><font size="6">DEMO</font></a>
