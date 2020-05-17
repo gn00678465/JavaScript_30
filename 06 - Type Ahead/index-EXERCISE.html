@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+const cities = []
+// function requestFunction() {
+//   cities.push(...JSON.parse(this.response))
+//   console.log(cities)
+// }
+// const xhr = new XMLHttpRequest();
+// xhr.open('get', endpoint);
+// xhr.addEventListener('load', requestFunction);
+// xhr.send('')
+
+fetch(endpoint)
+  .then((res) => res.json())
+  .then((data) => cities.push(...data))
+
+function regexpF(matchWorld) {
+  const regexp = new RegExp(matchWorld, 'gi')
+  return regexp
+}
+
+function matchArray(matchWorld, Array) {
+  const regexp = regexpF(matchWorld)
+  return Array.filter((el) => {
+    return el.city.match(regexp) || el.state.match(regexp)
+  })
+}
+
+function populationHandler(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function htmlHandler(matchWorld, matchedArray) {
+  return matchedArray.map((el) => {
+    const regexp = regexpF(matchWorld);
+    const cityName = el.city.replace(regexp, `<span class="hl">${matchWorld}</span>`);
+    const stateName = el.state.replace(regexp, `<span class="hl">${matchWorld}</span>`);
+    return `
+      <li>
+        <span class="name">${cityName}, ${stateName}</span>
+        <span class="population">${populationHandler(el.population)}</span>
+      </li>
+    `;
+  }).join('')
+}
+
+function render() {
+  const matchedArray = matchArray(this.value, cities);
+  const html = htmlHandler(this.value, matchedArray);
+  suggestions.innerHTML = html
+}
+
+const input = document.querySelector('.search'),
+      suggestions = document.querySelector('.suggestions')
+
+input.addEventListener('change', render)
+input.addEventListener('keyup', render)
+
+</script>
+</body>
+</html>
