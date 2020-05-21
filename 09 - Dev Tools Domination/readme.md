@@ -44,27 +44,37 @@
 - Regular
     `console.log('字串')`
 - Interpolated - 將console.log 內的字串 or 數字替換顯示。
-  前方為要替換的區塊，後方為要替換的內容。
-    - %s - 字串
-    - %d - 數字
-    - %f - 浮點數
-    `console.log(%s, 'String')`
+    > 前方為要替換的區塊，後方為要替換的內容。
+    - %s - 字串  `console.log(%s, 'String')`
+    - %d - 數字  `console.log(%d, number)`
+    - %f - 浮點數  `console.log(%f, float)`
+
 - Styled - 於要顯示的內容前加入 `%c`，並於後方加入 CSS 樣式，可以改變 console.log 出現的樣式。
+
     `console.log("%c住手", 'color: red; font-size: 36px')`
-- warning! - 印出警告的 console.log
+
+- warning! - 輸出警告的 console.log
+
     `console.warn('警告')`
-- Error - 印出錯誤的 console.log
+- Error - 輸出錯誤的 console.log
+
     `console.error('錯誤')`
-- Info - 印出info的
+- Info - 輸出info的
     > chrome 與 log 相同。
+
     `console.info('info')`
-- Testing - 利用條件判斷要印出的 console.log
-    - `false` 、 `0` 、 `null` 、 `NaN` 、 `undefined` 、 `""` 皆會印出內容。
-    `console.assert(true, "不印出")`
-    `console.assert(false, "印出")`
+- Testing - 利用條件判斷要輸出的 console.log
+    - 條件為 `true` 時不會輸出內容。
+    - 條件為 `false` 、 `0` 、 `null` 、 `NaN` 、 `undefined` 、 `""` 則皆會輸出內容。
+
+    `console.assert(true, "不輸出")`
+
+    `console.assert(false, "輸出")`
 - clearing - 清空 console.log 畫面
+
     `console.clear()`
-- Viewing DOM Elements - 印出對象的所有屬性，通過類似文件樹樣式的交互列表顯示。
+- Viewing DOM Elements - 輸出對象的所有屬性，通過類似文件樹樣式的交互列表顯示。
+
     `console.dir()`
 - Grouping together
     - `console.group()` - 建立一個新的分組(默認內容開啟)
