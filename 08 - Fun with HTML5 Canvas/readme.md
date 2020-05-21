@@ -46,3 +46,6 @@
     1. 設定兩個判斷式。
     1. 第一個判斷式當 `lineWidth >= 50` or `lineWidth <= 1`，判斷式內的 direction 變數會反轉(Inverted)。
     1. 第二個判斷式判斷 direction 為 true 執行 `lineWidth + 1` ，反之執行 `lineWidth - 1`。
+
+
+[DEMO](https://gn00678465.github.io/JavaScript_30_exercise/08%20-%20Fun%20with%20HTML5%20Canvas/index-EXERCISE.html)
