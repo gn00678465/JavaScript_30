@@ -79,3 +79,6 @@
     - 每一個計時器必須擁有唯一的名字。
     - `console.time()`
     - 以此計時器名字為參數調用 `console.timeEnd()` 時，瀏覽器將以毫秒為單位，輸出對應計時器所經過的時間。
+
+
+[DEMO](https://gn00678465.github.io/JavaScript_30_exercise/09%20-%20Dev%20Tools%20Domination/index-EXERCISE.html)
