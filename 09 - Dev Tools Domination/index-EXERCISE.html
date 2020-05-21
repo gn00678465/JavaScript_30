@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+    const p = document.querySelector('p');
+
+    let console = {
+      isDev: true,
+      log(...args) {
+        if (!this.isDev) return;
+        window.console.log(...args)
+      },
+      warn(...args) {
+        if (!this.isDev) return;
+        window.console.warn(...args)
+      },
+      error(...args) {
+        if (!this.isDev) return;
+        window.console.error(...args)
+      },
+      assert(...args) {
+        if (!this.isDev) return;
+        window.console.assert(...args)
+      },
+      dir(...args) {
+        if (!this.isDev) return;
+        window.console.dir(...args)
+      },
+      table(...args) {
+        if (!this.isDev) return;
+        window.console.table(...args)
+      },
+      time(...args) {
+        if (!this.isDev) return;
+        window.console.time(...args)
+      },
+      timeEnd(...args) {
+        if (!this.isDev) return;
+        window.console.timeEnd(...args)
+      }
+    }
+    // Regular
+    window.console.log('%cRegular', "color:blue; font-size: 16px;" )
+    window.console.log('正常的console.log')
+    // Interpolated
+    window.console.log('%cInterpolated(插值)', "color:blue; font-size: 16px;" )
+    console.log('Hello I am a %s string!', '💩');
+    console.log('This is a number %d', 1234);
+    console.log('This is a float %f', 1234.1234);
+    // Styled
+    window.console.log('%cStyled', "color:blue; font-size: 16px;" )
+    window.console.log('%c住手', "color:red; font-size: 36px;" )
+    // warning!
+    window.console.log('%cwarning!', "color:blue; font-size: 16px;" )
+    console.warn('警告')
+    // Error :|
+    window.console.log('%cError!', "color:blue; font-size: 16px;" )
+    console.error('錯誤')
+    // Info
+
+    // Testing
+    window.console.log('%cassert!', "color:blue; font-size: 16px;" )
+    console.assert(true, "不印出")
+    console.assert(false, "印出")
+    // clearing
+
+    // Viewing DOM Elements
+    window.console.log('%cdir!', "color:blue; font-size: 16px;" )
+    console.dir(p)
+    console.dir(dogs)
+    // Grouping together
+    window.console.log('%cGroup!', "color:blue; font-size: 16px;" )
+    dogs.forEach(dog => {
+      window.console.group(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      window.console.groupEnd(`${dog.name}`);
+    });
+    // counting
+    window.console.log('%ccounting!', "color:blue; font-size: 16px;" )
+    window.console.count('Wes');
+    window.console.count('Wes');
+    window.console.count('Steve');
+    window.console.count('Steve');
+    window.console.count('Wes');
+    window.console.count('Steve');
+    window.console.count('Wes');
+    window.console.count('Steve');
+    window.console.count('Steve');
+    window.console.count('Steve');
+    window.console.count('Steve');
+    window.console.count('Steve');
+    // timing
+    window.console.log('%ctiming!', "color:blue; font-size: 16px;" )
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
+    console.time('for')
+    for (let i = 0 ; i < 100000 ; i++) {
+      let j = i;
+    }
+    console.timeEnd('for')
+  </script>
+</body>
+</html>
