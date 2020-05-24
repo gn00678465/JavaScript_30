@@ -75,3 +75,5 @@
 - `&&` 、 `||` opeator
     - `XXX && OOO` : 當 `XXX` 條件成立時，執行 `OOO`
     - `XXX || OOO` : 當 `XXX` 條件不成立時，執行 `OOO`
+
+[DEMO](https://gn00678465.github.io/JavaScript_30_exercise/11%20-%20Custom%20Video%20Player/index_EXERCISE.html)
