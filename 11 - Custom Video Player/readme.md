@@ -37,10 +37,6 @@
           <td>影片的總播放秒數 (sec)</td>
         </tr>
         <tr>
-          <td><code>skip()</code></td>
-          <td></td>
-        </tr>
-        <tr>
           <td><code>volume</code></td>
           <td>設置媒體播放時的音量。</td>
         </tr>
