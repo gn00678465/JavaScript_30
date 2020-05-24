@@ -3,6 +3,9 @@
 - 陣列與類陣列
     - `document.querySelectorAll()` 所產生的為 NodeList 類陣列，可以透過 `Array.from()` 將之轉為陣列。
 
+- input
+    - `checkbox` 可透過 `tracked` 判斷此 `checkbox` 是否已被勾選。
+    - 並可透過 JS `input.checked = true` 操作 `checkbox` 勾選。
 - 事件(event)
     - 滑鼠事件中的參數除了有位置的資訊之外，還有
     - `altKey` 、 `ctrlKey` 、 `shiftKey` 預設皆為 false，一旦按下對應的按鍵並執行事件時，相對應的值便會變為 true。
