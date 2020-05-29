@@ -374,7 +374,9 @@ console.log(obj)
 
 1. `Arr1 = Arr2.slice()`
 1. `Arr2 = [].concat(Arr1)`
+    - 陣列合併並產新一個新陣列。
 1. `Arr2 = [...Arr1]`
+    - ES6 的展開。
 
 ## 物件 copy 的方法
 
