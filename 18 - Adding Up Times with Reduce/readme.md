@@ -1,7 +1,8 @@
 # 18 - Adding Up Times with Reduce
 
 重點:
-- `document.querySelector('selector')` 選取出來的為 NodeList 的類陣列，預設只有 `forEach` & `length` 等少數方法。
+- `document.querySelectorAll('selector')` 選取出來的為 NodeList 的類陣列，預設只有 `forEach` & `length` 等少數方法。
+    ![](NodeList.png)
     轉換惟一般陣列有以下四種方式
     - `[...Nodelist].map(item => item)` - ES6 的展開
     - `Array.from(NodeList).map(item => item)` - 直接轉換成陣列
