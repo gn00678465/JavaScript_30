@@ -24,3 +24,5 @@
 - `mouseenter` - mouse 事件，只會在滑鼠剛進入的時候觸發。
 - `mouseover` - mouse 事件，滑鼠經過綁定mouseover的當前元素以及它裡面的子元素的時候，都會觸發。(事件捕捉)
 - `resize` - window 事件，當畫面大小有變化時觸發。
+
+[DEMO](https://gn00678465.github.io/JavaScript_30_exercise/22%20-%20Follow%20Along%20Link%20Highlighter/index-EXERCISE.html)
