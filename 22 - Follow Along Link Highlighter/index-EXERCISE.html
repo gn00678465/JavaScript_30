@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>👀👀👀Follow Along Nav</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+      <div class="highlight"></div>
+      <ul class="menu">
+        <li><a class="bounding" href="">Home</a></li>
+        <li><a class="bounding" href="">Order Status</a></li>
+        <li><a class="bounding" href="">Tweets</a></li>
+        <li><a class="bounding" href="">Read Our History</a></li>
+        <li><a class="bounding" href="">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="wrapper">
+      <p>Lorem ipsum dolor sit amet, <a class="bounding" href="">consectetur</a> adipisicing elit. Est <a class="bounding" href="">explicabo</a> unde natus necessitatibus esse obcaecati distinctio, aut itaque, qui vitae!</p>
+      <p>Aspernatur sapiente quae sint <a class="bounding" href="">soluta</a> modi, atque praesentium laborum pariatur earum <a class="bounding" href="">quaerat</a> cupiditate consequuntur facilis ullam dignissimos, aperiam quam veniam.</p>
+      <p>Cum ipsam quod, incidunt sit ex <a class="bounding" href="">tempore</a> placeat maxime <a class="bounding" href="">corrupti</a> possimus <a class="bounding" href="">veritatis</a> ipsum fugit recusandae est doloremque? Hic, <a class="bounding" href="">quibusdam</a>, nulla.</p>
+      <p>Esse quibusdam, ad, ducimus cupiditate <a class="bounding" href="">nulla</a>, quae magni odit <a class="bounding" href="">totam</a> ut consequatur eveniet sunt quam provident sapiente dicta neque quod.</p>
+      <p>Aliquam <a class="bounding" href="">dicta</a> sequi culpa fugiat <a class="bounding" href="">consequuntur</a> pariatur optio ad minima, maxime <a class="bounding" href="">odio</a>, distinctio magni impedit tempore enim repellendus <a class="bounding" href="">repudiandae</a> quas!</p>
+    </div>
+
+  <script>
+    // 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+    const bounding = document.querySelectorAll('a.bounding')
+    const highlight = document.querySelector('.highlight')
+    let now = null
+    highlight.style.display = "none"
+    function setPosition () {
+      if (!now) return
+      let {top, left, width, height} = now.getBoundingClientRect()
+      highlight.style.display = ""
+      highlight.style.width = `${width}px`
+      highlight.style.height = `${height}px`
+      highlight.style.top = `${window.scrollY + top}px`
+      highlight.style.left = `${window.scrollX + left}px`
+      // 區域
+      // highlight.style.top = `${now.offsetTop}}px`
+      // highlight.style.left = `${now.offsetLeft}px`
+    }
+    function enterHandler (e) {
+      now = this
+      setPosition()
+    }
+
+    bounding.forEach( el => el.addEventListener('mouseenter', enterHandler))
+    window.addEventListener('resize', setPosition)
+  </script>
+</body>
+</html>
+
