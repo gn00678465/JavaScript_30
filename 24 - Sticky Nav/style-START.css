@@ -10,6 +10,13 @@ body {
   margin: 0;
 }
 
+body.stickyNav #main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
