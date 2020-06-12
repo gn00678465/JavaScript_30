@@ -21,10 +21,18 @@
             ![composedPath](composedPath.PNG)
         1. `e.preventDefault()`　:　取消事件的預設行為。
         1. `event binding` (事件綁定) : 將事件綁定到 `EventTarget` 上，當此事件被觸發時變執行 function。
-        1. `event delegate` (事件委派) : 
+            ```js
+            document.querySelector('button').addEventListener('click', function(e){
+              // do soming
+            }, { Capture: false, Once: false })
+            ```
+        1. `event delegate` (事件委派) : 當有大量的元素需綁定事件，又或者畫面會自行新增的元素，使用 `event binding`，新增的元素就不會綁定到事件，這種狀況下可以使用 `event delegate` 。
+            - `EventTarget` 不是單一元素，而是元素外的容器。
+            - 透過 `e.nodeName` 判斷是否為要執行 function 的元素。
+            - 容器外的元素無作用。
         1. `e.target` || `e.currentTarget`
-          - `e.target` : 代表的是註冊事件物件
-          - `e.currentTarget` : 代表的是實際觸發事件的物件
+            - `e.target` : 代表的是註冊事件物件
+            - `e.currentTarget` : 代表的是實際觸發事件的物件
 
 
 ```JS
