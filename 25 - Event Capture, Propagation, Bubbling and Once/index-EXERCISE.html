@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding JavaScript's Capture</title>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+    
+    *, *:before, *:after { 
+      box-sizing: inherit; 
+    }
+  
+    div {
+      width: 100%;
+      padding: 100px;
+    }
+  
+    .one {
+      background: thistle;
+    }
+  
+    .two {
+      background: mistyrose;
+    }
+  
+    .three {
+      background: coral;
+    }
+  </style>
+</head>
+<body class="bod">
+
+  <button>Button</button>
+  <br>
+  <br>
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+
+<ul>
+  <li><a href="javascript:;" class="btn1">Button_1</a></li>
+  <li><a href="javascript:;" class="btn2">Button_2</a></li>
+  <li><a href="javascript:;" class="btn3">Button_3</a></li>
+</ul>
+
+<script>
+  document.querySelector('button').addEventListener('click', function() {
+    alert('This is a button')
+  })
+
+  const divs = document.querySelectorAll('div')
+  let i = 1
+  let j = 1
+  divs.forEach( div => div.addEventListener('click', function(e) {
+      console.log('capture: false',i++ , this.className)
+      if (this.className === 'three') {
+        console.log(e.composedPath())
+      }
+    }, {Capture: false, once: false}))
+  divs.forEach( div => div.addEventListener('click', function(e) {
+    console.log('capture: true',j++, this.className)
+    if (this.className === 'three') {
+        console.log(e.composedPath())
+      }
+  }, {capture: true, once: false}))
+</script>
+</body>
+</html>
