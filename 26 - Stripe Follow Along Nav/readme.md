@@ -10,5 +10,12 @@
         1. `Arrow function` 指向目前的 function 或者 物件。
     - 可搭配 `&&` 運算子判斷當某條件或程式成立後再執行下一條件或程式。
 
+- mouse event
+    1.  current target
+        - `mouseenter` : 定點設備（滑鼠）移動到元素上時就會觸發 mouseenter 事件。
+        - `mouseleave` : 定點設備（滑鼠）離開元素時就會觸發 mouseleave 事件。
+    1. target
+        + `mouseover` : 類似 `mouseenter` 但會冒泡（bubble）。
+        + `mouseout` : 類似 `mouseleave` 但會冒泡（bubble）。
 
 [DEMO](https://gn00678465.github.io/JavaScript_30_exercise/26%20-%20Stripe%20Follow%20Along%20Nav/index-EXERCISE.html)
