@@ -38,3 +38,5 @@
     objProxy.c = true // {a: false, b: true} "c" true
     objProxy // Proxy {a: false, b: true, c: true}
     ```
+
+[DEMO](https://gn00678465.github.io/JavaScript_30_exercise/30%20-%20Whack%20A%20Mole/index-EXERICESE.html)
